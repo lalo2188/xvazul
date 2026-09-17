@@ -146,17 +146,12 @@
   }
 
   .azul-frame{
-    width:200px; height:200px;
-    border-radius:50%;
-    margin:26px auto 30px;
-    padding:6px;
-    border:1px solid var(--line-lilac);
-    box-shadow:0 0 0 1px rgba(183,176,224,0.15), 0 20px 60px rgba(0,0,0,0.6);
-    background:radial-gradient(circle, rgba(94,15,24,0.2), transparent 70%);
+    width:100%; max-width:360px;
+    margin:8px auto 30px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.6);
   }
   .azul-frame img{
-    width:100%; height:100%; object-fit:cover; border-radius:50%;
-    filter:grayscale(0.05) contrast(1.05);
+    display:block; width:100%; height:auto;
   }
 
   blockquote{
@@ -231,6 +226,7 @@
     color:var(--lilac);
   }
   .icon-circle svg{ width:38px; height:38px; }
+  .icon-circle img{ width:46px; height:46px; object-fit:contain; }
   .poems-text p{ color:var(--ink-dim); }
   .poems-text .hint{ margin-top:14px; font-style:italic; font-size:0.95rem; color:var(--gold-soft); }
   @media (max-width:640px){
@@ -350,12 +346,7 @@
       <span class="line1">Katherine</span>
       <span class="line2">Azul</span>
     </h1>
-    <div class="orn-wrap">
-      <span class="ln"></span>
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.2 2.8a9.2 9.2 0 1 0 6.9 15.4A7.4 7.4 0 0 1 14.2 2.8Z"/><path d="M19.6 3.2l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6.6-1.7Z"/></svg>
-      <span class="ln"></span>
-    </div>
-    <div class="azul-frame"><img src="assets/azul.jpg" alt="Katherine Azul"></div>
+    <div class="azul-frame"><img src="assets/azul-retrato.png" alt="Katherine Azul"></div>
     <blockquote>&ldquo;Bienvenidos a mis quince años. Entren libremente, por su propia voluntad, y dejen parte de la felicidad que traen consigo.&rdquo;</blockquote>
     <a class="btn" href="#detalles">Descubrir la noche <span class="spark">✦</span></a>
   </div>
@@ -399,11 +390,7 @@
   <div class="content">
     <div class="poems-layout">
       <div class="icon-circle">
-        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M32 21c-5-4.5-12.5-5.6-19-3.4v27c6.5-2.2 14-1.1 19 3.4 5-4.5 12.5-5.6 19-3.4v-27c-6.5-2.2-14-1.1-19 3.4Z"/>
-          <path d="M32 21v27"/>
-          <path d="M9 47c4.5 6.4 11 9.6 11 9.6M55 47c-4.5 6.4-11 9.6-11 9.6"/>
-        </svg>
+        <img src="assets/icono-lectura.png" alt="">
       </div>
       <div class="poems-text">
         <div class="eyebrow lilac">Momento especial · 7:00 pm</div>
