@@ -157,7 +157,7 @@
   blockquote{
     font-style:italic;
     color:var(--ink-dim);
-    font-size:1.15rem;
+    font-size:1.32rem;
     max-width:480px;
     margin:0 auto 34px;
     line-height:1.7;
@@ -182,6 +182,14 @@
   /* ---------- SECTIONS ---------- */
   section.dark{ background:var(--bg); }
   section.wine{ background:linear-gradient(180deg, #0b0a0d, #150a0d 50%, #0b0a0d); }
+
+  .floral-wrap{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(10,9,12,0.72), rgba(10,9,12,0.5) 25%, rgba(10,9,12,0.55) 75%, rgba(10,9,12,0.8)),
+      url('assets/rosas-album.jpg') center/cover no-repeat;
+  }
+  .floral-wrap section{ background:transparent; }
 
   h2.section-title{
     font-family:'Cinzel', serif;
@@ -219,14 +227,14 @@
   }
   .icon-circle{
     flex:0 0 auto;
-    width:78px; height:78px;
+    width:96px; height:96px;
     border-radius:50%;
     border:1px solid var(--line-lilac);
     display:flex; align-items:center; justify-content:center;
     color:var(--lilac);
   }
   .icon-circle svg{ width:38px; height:38px; }
-  .icon-circle img{ width:46px; height:46px; object-fit:contain; }
+  .icon-circle img{ width:62px; height:62px; object-fit:contain; }
   .poems-text p{ color:var(--ink-dim); }
   .poems-text .hint{ margin-top:14px; font-style:italic; font-size:0.95rem; color:var(--gold-soft); }
   @media (max-width:640px){
@@ -291,11 +299,25 @@
   .wishlist .label{ font-size:1.02rem; color:var(--ink); }
   @media (max-width:640px){ .wishlist{ grid-template-columns:1fr; } }
 
+  .cash-note{
+    margin-top:34px;
+    padding:26px 28px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:rgba(255,255,255,0.02);
+    text-align:left;
+    color:var(--ink-dim);
+  }
+  .cash-note p{ margin:0 0 14px; }
+  .cash-note p:last-child{ margin-bottom:0; }
+  .cash-note .bank{ color:var(--gold-soft); font-family:'Cinzel', serif; letter-spacing:0.05em; font-size:0.85rem; text-transform:uppercase; margin-bottom:10px; }
+  .cash-note .acc-line{ font-family:'Cormorant Garamond', serif; color:var(--ink); }
+
   /* album locked */
   #album{
     background:
       linear-gradient(180deg, rgba(11,10,13,0.72), rgba(11,10,13,0.6) 45%, rgba(11,10,13,0.92)),
-      url('assets/rosas-album.jpg') center/cover no-repeat,
+      url('assets/velas-bg.jpg') center/cover no-repeat,
       linear-gradient(180deg, #0b0a0d, #150a0d 50%, #0b0a0d);
   }
   .locked{
@@ -321,7 +343,7 @@
       #050406;
   }
   footer .content{ position:relative; z-index:2; }
-  footer blockquote{ margin-bottom:22px; }
+  footer blockquote{ margin-bottom:22px; color:#3a4a8c; }
   footer .bye{ font-family:'Cinzel', serif; letter-spacing:0.1em; font-size:1.3rem; color:var(--lilac-soft); text-transform:uppercase; }
 
   .divider-orn{
@@ -347,16 +369,18 @@
       <span class="line2">Azul</span>
     </h1>
     <div class="azul-frame"><img src="assets/azul-retrato.png" alt="Katherine Azul"></div>
-    <blockquote>&ldquo;Bienvenidos a mis quince años. Entren libremente, por su propia voluntad, y dejen parte de la felicidad que traen consigo.&rdquo;</blockquote>
+    <blockquote>&ldquo;Bienvenidos a mis XV años.<br>Entren libremente por su propia voluntad y dejen parte de la felicidad que traen consigo.&rdquo;</blockquote>
     <a class="btn" href="#detalles">Descubrir la noche <span class="spark">✦</span></a>
   </div>
 </section>
+
+<div class="floral-wrap">
 
 <!-- DETALLES -->
 <section id="detalles" class="dark">
   <div class="content">
     <div class="eyebrow lilac">La cita</div>
-    <h2 class="section-title">Cuando caiga la noche</h2>
+    <h2 class="section-title">Cuando el sol empiece a ocultarse</h2>
     <div class="orn-wrap">
       <span class="ln"></span>
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.2 2.8a9.2 9.2 0 1 0 6.9 15.4A7.4 7.4 0 0 1 14.2 2.8Z"/></svg>
@@ -457,7 +481,7 @@
 <!-- WISHLIST -->
 <section class="dark">
   <div class="content" style="max-width:760px;">
-    <div class="eyebrow">Por si deseas obsequiarme algo</div>
+    <div class="eyebrow">Ideas para un detalle</div>
     <h2 class="section-title">Lista de deseos</h2>
     <div class="wishlist">
       <a href="https://a.co/d/0cLcqhha" target="_blank" rel="noopener"><span class="num">01</span><span class="label">Detalle de Amazon</span></a>
@@ -471,9 +495,17 @@
       <a href="https://www.sheglam.com/es/product/Delineador-de-ojos-l%C3%ADquido-resistente-al-agua-Ros%C3%A9-Line-Define-color-negro-10427480024532800" target="_blank" rel="noopener"><span class="num">09</span><span class="label">SHEGLAM · Delineador Rosé Line &amp; Define (negro)</span></a>
       <a href="https://flowerknows.co/en-mx/products/swan-ballet-six-color-makeup-palette-us?variant=62756954276209" target="_blank" rel="noopener"><span class="num">10</span><span class="label">Flower Knows · Swan Ballet Paleta de Maquillaje</span></a>
     </div>
+    <div class="cash-note">
+      <p>Si prefieres obsequiarme un detalle en efectivo, durante la celebración habrá una cajita para sobres.</p>
+      <p>También puedes hacerlo mediante transferencia a la siguiente cuenta:</p>
+      <div class="bank">BBVA</div>
+      <div class="acc-line">Tarjeta: 4152 3146 6850 7919</div>
+      <div class="acc-line">Cuenta: 012 180 01517023992 1</div>
+    </div>
   </div>
 </section>
 
+</div>
 <!-- ALBUM -->
 <section id="album" class="wine">
   <div class="content">
@@ -484,13 +516,13 @@
       <div class="title">El portal permanece cerrado</div>
       <div class="sub">Se abrirá el 24 de octubre a las 5:00 pm.</div>
     </div>
+    <a class="btn" style="margin-top:26px;" href="#" target="_blank" rel="noopener">Subir tus fotos de la noche</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="content">
-    <div class="divider-orn">✦ ✦ ✦</div>
     <blockquote>&ldquo;Hasta que la luna se oculte y el sol reclame el mundo, les agradezco por ser parte de mi noche inmortal.&rdquo;</blockquote>
     <div class="bye no-ligatures">Gggggg los quiero, bye besitos</div>
   </div>
