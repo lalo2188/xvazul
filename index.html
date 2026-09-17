@@ -8,6 +8,12 @@
 <meta property="og:title" content="XV años de Katherine Azul" />
 <meta property="og:description" content="Una noche gótica, romántica e inmortal. 24 de octubre de 2026." />
 <meta property="og:type" content="website" />
+<script>
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+  if (window.location.hash) { history.replaceState(null, '', window.location.pathname + window.location.search); }
+  window.scrollTo(0, 0);
+  window.addEventListener('load', function(){ window.scrollTo(0, 0); });
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,6 +107,7 @@
   /* ---------- HERO ---------- */
   #hero{
     min-height:100vh;
+    min-height:100svh;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -183,13 +190,14 @@
   section.dark{ background:var(--bg); }
   section.wine{ background:linear-gradient(180deg, #0b0a0d, #150a0d 50%, #0b0a0d); }
 
-  .floral-wrap{
-    position:relative;
-    background:
-      linear-gradient(180deg, rgba(10,9,12,0.72), rgba(10,9,12,0.5) 25%, rgba(10,9,12,0.55) 75%, rgba(10,9,12,0.8)),
-      url('assets/rosas-album.jpg') center/cover no-repeat;
+  .rose-bg{
+    background-color:var(--bg);
+    background-image:
+      linear-gradient(180deg, rgba(10,9,12,0.68), rgba(10,9,12,0.55) 50%, rgba(10,9,12,0.68)),
+      url('assets/rosas-album.jpg');
+    background-repeat:repeat;
+    background-size:420px auto;
   }
-  .floral-wrap section{ background:transparent; }
 
   h2.section-title{
     font-family:'Cinzel', serif;
@@ -320,6 +328,9 @@
       url('assets/velas-bg.jpg') center/cover no-repeat,
       linear-gradient(180deg, #0b0a0d, #150a0d 50%, #0b0a0d);
   }
+  @media (max-width:640px){
+    #album{ background-position:center, 22% center, center; }
+  }
   .locked{
     border:1px dashed var(--line);
     padding:50px 26px;
@@ -333,17 +344,12 @@
   .locked .sub{ color:var(--ink-dim); }
 
   /* ---------- footer with puppy photo ---------- */
-  footer{
-    position:relative;
-    padding:110px 24px 70px;
-    text-align:center;
-    background:
-      linear-gradient(180deg, rgba(5,4,6,0.55) 0%, rgba(5,4,6,0.45) 40%, rgba(5,4,6,0.93) 100%),
-      url('assets/puppy.jpg') center/cover no-repeat,
-      #050406;
-  }
-  footer .content{ position:relative; z-index:2; }
-  footer blockquote{ margin-bottom:22px; color:#3a4a8c; }
+  footer{ background:#050406; }
+  .quote-block{ padding:90px 24px 60px; text-align:center; background:#050406; }
+  .footer-quote{ color:#c62131; font-style:italic; font-size:1.25rem; max-width:480px; margin:0 auto; line-height:1.7; }
+  .puppy-photo{ width:100%; line-height:0; }
+  .puppy-photo img{ display:block; width:100%; height:auto; }
+  .bye-block{ padding:50px 24px 70px; text-align:center; background:#050406; }
   footer .bye{ font-family:'Cinzel', serif; letter-spacing:0.1em; font-size:1.3rem; color:var(--lilac-soft); text-transform:uppercase; }
 
   .divider-orn{
@@ -374,10 +380,8 @@
   </div>
 </section>
 
-<div class="floral-wrap">
-
 <!-- DETALLES -->
-<section id="detalles" class="dark">
+<section id="detalles" class="rose-bg">
   <div class="content">
     <div class="eyebrow lilac">La cita</div>
     <h2 class="section-title">Cuando el sol empiece a ocultarse</h2>
@@ -410,7 +414,7 @@
 </section>
 
 <!-- MOMENTO ESPECIAL -->
-<section class="wine">
+<section class="rose-bg">
   <div class="content">
     <div class="poems-layout">
       <div class="icon-circle">
@@ -427,7 +431,7 @@
 </section>
 
 <!-- CODIGO DE VESTIMENTA -->
-<section class="dark">
+<section class="rose-bg">
   <div class="content" style="max-width:820px;">
     <div class="eyebrow">Código de vestimenta</div>
     <h2 class="section-title">Gótico victoriano romántico</h2>
@@ -469,7 +473,7 @@
 </section>
 
 <!-- RSVP -->
-<section class="wine">
+<section class="rose-bg">
   <div class="content">
     <div class="eyebrow">Tu presencia hará eterna la noche</div>
     <h2 class="section-title">Confirma tu asistencia</h2>
@@ -479,7 +483,7 @@
 </section>
 
 <!-- WISHLIST -->
-<section class="dark">
+<section class="rose-bg">
   <div class="content" style="max-width:760px;">
     <div class="eyebrow">Ideas para un detalle</div>
     <h2 class="section-title">Lista de deseos</h2>
@@ -499,13 +503,13 @@
       <p>Si prefieres obsequiarme un detalle en efectivo, durante la celebración habrá una cajita para sobres.</p>
       <p>También puedes hacerlo mediante transferencia a la siguiente cuenta:</p>
       <div class="bank">BBVA</div>
+      <div class="acc-line">Titular: Patricia Corichi</div>
       <div class="acc-line">Tarjeta: 4152 3146 6850 7919</div>
       <div class="acc-line">Cuenta: 012 180 01517023992 1</div>
     </div>
   </div>
 </section>
 
-</div>
 <!-- ALBUM -->
 <section id="album" class="wine">
   <div class="content">
@@ -522,8 +526,11 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="content">
-    <blockquote>&ldquo;Hasta que la luna se oculte y el sol reclame el mundo, les agradezco por ser parte de mi noche inmortal.&rdquo;</blockquote>
+  <div class="quote-block">
+    <blockquote class="footer-quote">&ldquo;Hasta que la luna se oculte y el sol reclame el mundo, les agradezco por ser parte de mi noche inmortal.&rdquo;</blockquote>
+  </div>
+  <div class="puppy-photo"><img src="assets/puppy.jpg" alt=""></div>
+  <div class="bye-block">
     <div class="bye no-ligatures">Gggggg los quiero, bye besitos</div>
   </div>
 </footer>
